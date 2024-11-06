@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Khaleed, an experienced web developer. View projects in web development and design.">
+  <meta name="keywords" content="Khaleed, web developer, portfolio, HTML, CSS, JavaScript, Tailwind CSS">
+  <meta name="author" content="Khaleed">
+  <title>Khaleed's Portfolio</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Custom Neon Text Effect */
+    .neon-text {
+      color: #39ff14;
+      text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px #0fa, 0 0 80px #0fa;
+    }
+
+    /* Custom Box Shadow */
+    .box-shadow {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Fade In Animation */
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Responsive Navigation */
+    .menu-button {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-button {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navigation -->
+  <header class="flex justify-between items-center p-6 bg-black neon-text">
+    <h1 class="text-4xl">Khaleed</h1>
+    <nav>
+      <button class="menu-button text-green-400 text-3xl focus:outline-none">&#9776;</button>
+      <ul class="flex space-x-6 nav-links">
+        <li><a href="#about" class="hover:text-green-400">About</a></li>
+        <li><a href="#portfolio" class="hover:text-green-400">Projects</a></li>
+        <li><a href="#testimonials" class="hover:text-green-400">Testimonials</a></li>
+        <li><a href="#contact" class="hover:text-green-400">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="h-screen flex items-center justify-center bg-cover bg-center fade-in" style="background-image: url('hero-image.jpg');">
+    <div class="text-center">
+      <h2 class="text-5xl neon-text">Welcome to My Portfolio</h2>
+      <p class="text-xl mt-4">I'm Khaleed, a passionate Web Developer</p>
+      <a href="#portfolio" class="mt-6 inline-block px-6 py-3 bg-green-500 text-black font-bold rounded hover:bg-green-600">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 bg-gray-800">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6 neon-text">About Me</h2>
+      <p class="text-lg leading-relaxed">
+        I am a highly motivated web developer with experience in building interactive, responsive websites using HTML, CSS, JavaScript, and Tailwind CSS. My goal is to deliver optimized and well-structured code that meets both client and user needs.
+      </p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section with Filtering -->
+  <section id="portfolio" class="py-20 px-6 bg-gray-700 box-shadow">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6 neon-text">My Projects</h2>
+      <div class="flex justify-center mb-8">
+        <button class="px-4 py-2 mx-2 bg-green-500 text-black font-bold rounded hover:bg-green-600 filter-btn" data-category="all">All</button>
+        <button class="px-4 py-2 mx-2 bg-green-500 text-black font-bold rounded hover:bg-green-600 filter-btn" data-category="web">Web Development</button>
+        <button class="px-4 py-2 mx-2 bg-green-500 text-black font-bold rounded hover:bg-green-600 filter-btn" data-category="design">UI/UX Design</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="project bg-gray-800 p-4 rounded-lg shadow-lg" data-category="web">
+          <img src="project1.jpg" alt="Project 1" class="mb-4 rounded-lg">
+          <h3 class="text-2xl font-bold">Web Development Project</h3>
+          <p class="mt-2">A dynamic, responsive website for a client.</p>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project bg-gray-800 p-4 rounded-lg shadow-lg" data-category="design">
+          <img src="project2.jpg" alt="Project 2" class="mb-4 rounded-lg">
+          <h3 class="text-2xl font-bold">UI/UX Design Project</h3>
+          <p class="mt-2">A modern, user-friendly interface design.</p>
+        </div>
+        
+        <!-- More projects... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-20 px-6 bg-gray-800">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6 neon-text">What Clients Say</h2>
+      <div class="space-y-8">
+        <blockquote class="p-4 bg-gray-700 rounded-lg">
+          <p class="text-lg">"Khaleed delivered a fantastic website that exceeded our expectations. His attention to detail and skill set are top-notch!"</p>
+          <footer class="mt-4 text-right">— Client 1</footer>
+        </blockquote>
+        <blockquote class="p-4 bg-gray-700 rounded-lg">
+          <p class="text-lg">"His creativity and professionalism are unmatched. I highly recommend him for any web development project!"</p>
+          <footer class="mt-4 text-right">— Client 2</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with Validation -->
+  <section id="contact" class="py-20 px-6 bg-gray-800">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-6 neon-text">Get In Touch</h2>
+      <form id="contact-form" class="space-y-4">
+        <input type="text" id="name" name="name" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-600">
+        <input type="email" id="email" name="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-600">
+        <textarea id="message" name="message" placeholder="Your Message" rows="4" class="w-full p-3 rounded-lg bg-gray-900 border border-gray-600"></textarea>
+        <button type="submit" class="px-6 py-3 bg-green-500 text-black font-bold rounded hover:bg-green-600">Send Message</button>
+      </form>
+      <p id="error-msg" class="text-red-500 mt-4 hidden">Please fill in all fields before submitting!</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-gray-900 text-center">
+    <p>&copy; 2024 Khaleed. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
